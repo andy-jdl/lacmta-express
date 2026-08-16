@@ -2,8 +2,10 @@
   "name": "express",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "functions/*.js",
   "scripts": {
+    "func": "func start",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -11,6 +13,8 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "@azure/functions": "^4.16.2",
+    "azure-function-express": "^1.1.0",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "lru-cache": "^11.5.2",

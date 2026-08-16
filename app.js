@@ -1,7 +1,7 @@
 const express = require('express')
 const twilio = require('twilio')
 const { LRUCache } = require('lru-cache');
-require('dotenv').config();
+// require('dotenv').config();
 
 const app = express()
 
@@ -92,6 +92,10 @@ function validateTwilioRequest(req) {
     return twilio.validateRequest(authToken, twilioSignature, url, params)
 }
 
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+})
+
 app.post('/api/predict', async (req, res, next) => {
     const { From: from, Body: body } = req.body;
 
@@ -132,7 +136,9 @@ app.post('/api/predict', async (req, res, next) => {
     }
 });
 
-const PORT = 3000;
-app.listen(PORT, () => {
-    console.log(`Listening on PORT: ${PORT}`)
-})
+// const PORT = 3000;
+// app.listen(PORT, () => {
+//     console.log(`Listening on PORT: ${PORT}`)
+// })
+
+module.exports = app;
