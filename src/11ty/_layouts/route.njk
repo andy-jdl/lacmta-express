@@ -1,0 +1,21 @@
+---
+layout: routelayout.njk
+pagination:
+  data: routes
+  size: 1
+  alias: route
+permalink: "routes/{{ route.route_code }}/index.html"
+title: "Route {{ route.route_code }}"
+---
+<table>
+  <tr>
+    <th>Stop ID</th>
+    <th>Street Crossing</th>
+  </tr>
+  {% for stop in route.stops %}
+    <tr>
+      <td>{{ stop.stop_id }}</td>
+      <td>{{ stop.stop_name }}</td>
+    </tr>
+  {% endfor %}
+</table>
