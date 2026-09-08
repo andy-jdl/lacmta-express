@@ -83,6 +83,11 @@ async function validateTwilioRequest(twilioSignature, params) {
     return twilio.validateRequest(authToken, twilioSignature, url, entryParams)
 }
 
+function toTwiml(message) {
+  const twiml = new twilio.twiml.MessagingResponse();
+  return twiml.message(message);
+}
+
 functionApp.http('predictHttpTrigger', {
   methods: ['POST'],
   authLevel: 'anonymous',
@@ -101,9 +106,13 @@ functionApp.http('predictHttpTrigger', {
       const body = params.get('Body');
 
       if (isUserLimited(sender)) {
+        const twiml = toTwiml('Too many messages. Wait a few minutes and try again.')
         return {
-          status: 429,
-          body: 'Please try again later'
+          status: 200,
+          headers: {
+            'Content-Type': 'text/xml'
+          },
+          body: twiml.toString()
         }
       }
 
@@ -111,22 +120,24 @@ functionApp.http('predictHttpTrigger', {
       const [agency, stopId] = parts;
 
       if (agency !== "LACMTA") {
+        const twiml = toTwiml('Agency name must be LACMTA')
         return {
-          status: 400,
+          status: 200,
           headers: {
             'Content-Type': 'text/xml'
           },
-          body: 'Agency name should be LACMTA'
+          body: twiml.toString()
         }
       }
 
       if (!/^\d+$/.test(stopId)) {
+        const twiml = toTwiml('Stop ID must be a number')
         return {
-          status: 400,
+          status: 200,
           headers: {
             'Content-Type': 'text/xml'
           },
-          body: 'Stop ID must be a number'
+          body: twiml.toString()
         }
       }
 
