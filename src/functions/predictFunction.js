@@ -48,8 +48,7 @@ async function resolveArrivals(stopId) {
 }   
 
 function createArrivalMessage(arrivals) {
-    const result = JSON.stringify(arrivals.data.predictionsData, null, 2);
-    const stopPrediction = JSON.parse(result);
+    const stopPrediction = arrivals.data.predictionsData;
 
     const lines = [];
     const stopName = stopPrediction[0].stopName;
@@ -69,8 +68,9 @@ function createArrivalMessage(arrivals) {
         }
     }
 
-    if(lines.length === 0) {
-        return "No upcoming arrivals found for this stop."
+    if(lines.length <= 1) {
+      const message = 'No upcoming arrivals found for this stop.'
+      lines.push(message)
     }
 
     return lines.join('\n');
