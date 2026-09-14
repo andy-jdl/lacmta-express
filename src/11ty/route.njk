@@ -5,8 +5,10 @@ pagination:
   size: 1
   alias: route
 permalink: "routes/{{ route.route_code }}/index.html"
-title: "Route {{ route.route_code }}"
+eleventyComputed:
+  title: "Route {{ route.route_code }}"
 ---
+<a href="/lacmta-express/">Back to Home</a>
 <table>
   <tr>
     <th>Stop ID</th>
