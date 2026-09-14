@@ -13,7 +13,7 @@ permalink: index.html
     <p>Last Updated: {{ date }}</p>
     <ul>
       {% for route in routes %}
-      <a href="/lacmta-express/routes/{{ route.route_code }}/">Route {{ route.route_code }}</a>
+        <li><a href="/lacmta-express/routes/{{ route.route_code }}">{{ route.route_code }}</a></li>
       {% endfor %}
     </ul>
   </body>
