@@ -5,6 +5,7 @@
   "main": "src/functions/predictFunction.js",
   "scripts": {
     "start": "func start",
+    "serve": "npx @11ty/eleventy --serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
