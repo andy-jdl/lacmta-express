@@ -1,4 +1,10 @@
 .bus-route-container{
+
+  .bus-route-header {
+    justify-content: center;
+    margin: 20px;
+  }
+
   h1 {
     font-family: 'Space Grotesk', sans-serif;
   }
@@ -45,5 +51,5 @@ td, th {
 }
 
 tr:nth-child(even) {
-  background-color: #DD6D03;
+  background-color: #E2EFF8;
 }

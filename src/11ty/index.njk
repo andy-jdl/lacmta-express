@@ -5,11 +5,14 @@ layout: layout.njk
 permalink: index.html
 ---
 <div class="bus-route-container">
-  <h1>Metro Bus Routes</h1>
-  <a href="/privacypolicy">Privacy Policy</a>
-  <a href="/termsconditions">Terms & Conditions</a>
-  <a href="https://github.com/andy-jdl/lacmta-express">Github</a>
-  <p>Last Updated: {{ date }}</p>
+  <div class="bus-route-header">
+    <h1>Metro Bus Routes</h1>
+    <a href="/privacypolicy">Privacy Policy</a>
+    <a href="/termsconditions">Terms & Conditions</a>
+    <a href="https://github.com/andy-jdl/lacmta-express">Github</a>
+    <p>Last Updated: {{ date }}</p>
+
+  </div>
   <ul>
     {% for route in routes %}
       <li>

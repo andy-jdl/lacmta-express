@@ -24,5 +24,6 @@ for route in route_scheudle:
         "stops": schedules
     })
 
+results.sort(key=lambda r: int(r["route_code"]))
 with open('route_schedule_clean.json', 'w') as f:
     json.dump(results, f, indent=2)
