@@ -1,22 +1,20 @@
 ---
 title: Home Page
-date: 2026-09-07
+date: 2026-09-15
+layout: layout.njk
 permalink: index.html
 ---
-<html>
-  <head>
-    <title>{{ title }}</title>
-  </head>
-
-  <body>
-    <h1>Metro Bus Routes</h1>
-    <p>Last Updated: {{ date }}</p>
-    <ul>
-      {% for route in routes %}
-        <li>
-          <a href="/routes/{{ route.route_code }}">{{ route.route_code }}</a>
-        </li>
-      {% endfor %}
-    </ul>
-  </body>
-</html>
+<div class="bus-route-container">
+  <h1>Metro Bus Routes</h1>
+  <a href="/privacypolicy">Privacy Policy</a>
+  <a href="/termsconditions">Terms & Conditions</a>
+  <a href="https://github.com/andy-jdl/lacmta-express">Github</a>
+  <p>Last Updated: {{ date }}</p>
+  <ul>
+    {% for route in routes %}
+      <li>
+        <a href="/routes/{{ route.route_code }}">{{ route.route_code }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

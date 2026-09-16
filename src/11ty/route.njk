@@ -1,5 +1,5 @@
 ---
-layout: routelayout.njk
+layout: layout.njk
 pagination:
   data: routes
   size: 1
@@ -8,8 +8,8 @@ permalink: "/routes/{{ route.route_code }}/index.html"
 eleventyComputed:
   title: "Route {{ route.route_code }}"
 ---
-<h3>Note: Direction Id may refer to North/East (0) or South/West (1). Understand your bus route and text the appropriate Stop ID</h3>
 <a href="/">Back to Home</a>
+<h3>Note: Destination Id may refer to North/East (0) or South/West (1). Understand your bus route and text the appropriate Stop ID</h3>
 <table>
   <tr>
     <th>Stop ID</th>

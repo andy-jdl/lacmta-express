@@ -1,5 +1,7 @@
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addPassthroughCopy("bundle.css");
   eleventyConfig.ignores.add('src/11ty/_site/**');
+
   return {
     dir: {
       input: 'src/11ty',

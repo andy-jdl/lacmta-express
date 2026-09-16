@@ -1,0 +1,49 @@
+.bus-route-container{
+  h1 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  p {
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  a {
+    font-family: 'DM Sans', sans-serif;
+    margin: 20px;
+    color: #1e6be6;
+  }
+
+  ul {
+    column-count:4
+  }
+
+  li {
+    list-style: none;
+    padding: 10px
+  }
+}
+
+a{
+  font-family: 'DM Sans', sans-serif;
+  color: #1e6be6;
+}
+
+h3 {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+table {
+  font-family: 'DM Sans', sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #111111;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #DD6D03;
+}
