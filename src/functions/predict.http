@@ -1,0 +1,25 @@
+POST http://localhost:7071/api/predictHttpTrigger HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+From=%2B1234567890&Body=LACMTA+420
+
+###
+
+POST http://localhost:7071/api/predictHttpTrigger HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+From=%2B1234567890&Body=HELP
+
+###
+
+POST http://localhost:7071/api/predictHttpTrigger HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+From=%2B1234567890&Body=CANCEL
+
+###
+
+POST http://localhost:7071/api/predictHttpTrigger HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+From=%2B1234567890&Body=CANCE
