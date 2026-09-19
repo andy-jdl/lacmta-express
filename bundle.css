@@ -3,14 +3,26 @@
   .bus-route-header {
     justify-content: center;
     margin: 20px;
+    flex-direction: column;
+    align-items: center;
   }
 
   h1 {
     font-family: 'Space Grotesk', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 20;
+  }
+
+  .header-icon {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    image-rendering: pixelated;
   }
 
   h4 {
-    font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
   }
 
   p {
@@ -24,7 +36,7 @@
   }
 
   ul {
-    column-count:4
+    column-count:4;
   }
 
   li {

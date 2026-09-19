@@ -1,5 +1,7 @@
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("bundle.css");
+  eleventyConfig.addPassthroughCopy('src/11ty/assets/bus-sq.png');
+
   eleventyConfig.ignores.add('src/11ty/_site/**');
 
   return {
