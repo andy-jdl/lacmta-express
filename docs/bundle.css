@@ -21,8 +21,8 @@
     image-rendering: pixelated;
   }
 
-  h4 {
-      font-family: 'Space Grotesk', sans-serif;
+  .mta { 
+    font-weight: bold;
   }
 
   p {

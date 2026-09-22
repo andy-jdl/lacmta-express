@@ -110,10 +110,6 @@ function checkForKeyWordMessage(body) {
     return createTwilioResponse(twiml);
   }
   
-  if(!HELP_KEYWORDS.includes(lowerCaseBody)) {
-    console.log("SHOWING FALSE")
-  }
-
   if (HELP_KEYWORDS.includes(lowerCaseBody)) {
     const twiml = toTwiml('LACMTA Express. Rply STOP to cancel. Msg&data rates may apply. Visit lacmtaexpress.com for support');
     return createTwilioResponse(twiml);
@@ -138,6 +134,7 @@ functionApp.http('predictHttpTrigger', {
   handler: async (request, context) => {
     const twilioSignature = request.headers.get('x-twilio-signature');
     const params = new URLSearchParams(await request.text());
+    console.log('Params: ', params)
     if(!await validateTwilioRequest(twilioSignature, params)) {
       return {
         status: 403,
@@ -174,7 +171,7 @@ functionApp.http('predictHttpTrigger', {
 
       const arrivals = await resolveArrivals(stopId);
       const message = createArrivalMessage(arrivals);
-
+      console.log('Message: ', message)
       const twiml = new twilio.twiml.MessagingResponse();
       twiml.message(message);
       return createTwilioResponse(twiml);
