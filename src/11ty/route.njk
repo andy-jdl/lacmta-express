@@ -9,18 +9,30 @@ eleventyComputed:
   title: "Route {{ route.route_code }}"
 ---
 <a href="/">Back to Home</a>
-<h3>Note: Destination Id may refer to North/East (0) or South/West (1). Understand your bus route and text the appropriate Stop ID</h3>
-<table>
-  <tr>
-    <th>Stop ID</th>
-    <th>Street Crossing</th>
-    <th>Destination Id</th>
-  </tr>
-  {% for stop in route.stops %}
-    <tr>
-      <td>{{ stop.stop_id }}</td>
-      <td>{{ stop.stop_name }}</td>
-      <td>{{ stop.direction_id }}</td>
-    </tr>
-  {% endfor %}
-</table>
+<h1>Route {{ route.route_code }}</h4>
+{% for stops in route.stops %}
+  <table>
+    <thead>
+      <tr>
+        <th colspan="3">
+          {{ (stops | first).stop_name }} to {{ (stops | last).stop_name }}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Stop ID</th>
+        <th>Street Crossing</th>
+        <th>Destination Id</th>
+      </tr>
+      {% for stop in stops %}
+        <tr>
+          <td>{{ stop.stop_id }}</td>
+          <td>{{ stop.stop_name }}</td>
+          <td>{{ stop.direction_id }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <br />
+{% endfor %}
